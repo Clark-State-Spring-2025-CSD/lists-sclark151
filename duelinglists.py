@@ -18,3 +18,37 @@
 #Player two's highest number is 8 at index 1
 #Player one's lowest number is 1 at index 4
 #Player two's lowest number is 1 at index 5
+
+import random
+
+playerOne = random.sample(range(1,51), 10)
+playerTwo = random.sample(range(1,51), 10)
+
+print(f"Player One = {playerOne}")
+print(f"Player Two = {playerTwo}")
+
+oneWin = 0
+twoWin = 0
+
+for i in range(len(playerOne)):
+    if playerOne[i] > playerTwo[i]:
+        oneWin += 1
+    elif playerOne[i] < playerTwo [i]:
+        twoWin += 1
+
+print(f"Player One won {oneWin} times.")
+print(f"Player Two won {twoWin} times.")
+
+oneHigh = max(playerOne)
+twoHigh = max(playerTwo)
+oneLow = min(playerOne)
+twoLow = min(playerTwo)
+oneHighIndex = playerOne.index(oneHigh)
+twoHighIndex = playerTwo.index(twoHigh)
+oneLowIndex = playerOne.index(oneLow)
+twoLowIndex = playerTwo.index(twoLow)
+
+print(f"Player One's highest number is {oneHigh} at index {oneHighIndex}.")
+print(f"Player Two's highest number is {twoHigh} at index {twoHighIndex}.")
+print(f"Player One's lowest number is {oneLow} at index {oneLowIndex}.")
+print(f"Player Two's lowest number is {twoLow} at index {twoLowIndex}.")
